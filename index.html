@@ -13,29 +13,30 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #020617;
-    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000;
+    color: #fff;
 }
 
 /* NAV */
 nav {
     position: fixed;
     width: 100%;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
-    padding: 20px 60px;
-    background: rgba(2,6,23,0.9);
+    background: rgba(0,0,0,0.7);
     backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 nav h2 {
-    color: #22c55e;
+    font-weight: 500;
 }
 
 nav a {
-    margin-left: 25px;
-    color: #94a3b8;
+    color: #aaa;
+    margin-left: 20px;
     text-decoration: none;
 }
 
@@ -45,35 +46,34 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 60px;
-    max-width: 900px;
+    padding: 0 80px;
 }
 
 .hero h1 {
-    font-size: 65px;
-    line-height: 1.1;
+    font-size: 70px;
+    font-weight: 600;
 }
 
 .hero p {
     margin-top: 20px;
-    font-size: 20px;
-    color: #94a3b8;
+    font-size: 22px;
+    color: #aaa;
 }
 
 .btn {
     margin-top: 30px;
     padding: 15px 30px;
-    background: #22c55e;
+    border-radius: 30px;
     border: none;
-    border-radius: 10px;
-    font-size: 18px;
+    background: white;
+    color: black;
+    font-size: 16px;
     cursor: pointer;
 }
 
 /* SECTION */
 .section {
-    padding: 100px 60px;
-    max-width: 1100px;
+    padding: 120px 80px;
 }
 
 .section h2 {
@@ -81,134 +81,118 @@ nav a {
     margin-bottom: 20px;
 }
 
-.cards {
+.section p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+/* FEATURES */
+.features {
     display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.card {
-    background: #0f172a;
-    padding: 30px;
-    border-radius: 15px;
-    width: 300px;
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    font-size: 28px;
+    margin-top: 30px;
+    font-weight: 500;
 }
 
 /* FOOTER */
 footer {
-    padding: 40px;
     text-align: center;
-    background: #020617;
-    color: #94a3b8;
+    padding: 40px;
+    color: #666;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <h2>Biovisor AI</h2>
     <div>
         <a href="#producto">Producto</a>
         <a href="#tecnologia">Tecnología</a>
-        <a href="#vision">Visión</a>
+        <a href="#impacto">Impacto</a>
         <a href="#contacto">Contacto</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>Transformando la medicina con visión artificial e inteligencia aumentada</h1>
-    <p>Biovisor AI integra hardware wearable y algoritmos avanzados para asistir a profesionales sanitarios en tiempo real.</p>
-    <button class="btn">Solicitar demo</button>
+    <h1>La nueva visión de la medicina</h1>
+    <p>Inteligencia artificial integrada en un visor wearable para asistencia clínica en tiempo real.</p>
+    <button class="btn" onclick="scrollToSection()">Explorar</button>
 </section>
 
-<!-- PRODUCTO -->
 <section class="section" id="producto">
-    <h2>Producto</h2>
-    <div class="grid">
-        <div>
-            <p>
-                Biovisor es un dispositivo wearable diseñado para mejorar la precisión diagnóstica y la eficiencia clínica mediante inteligencia artificial.
-            </p>
-        </div>
-        <div>
-            <p>
-                Permite visualizar información crítica en tiempo real sin interrumpir el flujo de trabajo del profesional.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- TECNOLOGÍA -->
-<section class="section" id="tecnologia">
-    <h2>Tecnología</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Computer Vision</h3>
-            <p>Análisis visual avanzado aplicado a entornos clínicos.</p>
-        </div>
-        <div class="card">
-            <h3>IA en tiempo real</h3>
-            <p>Procesamiento instantáneo para soporte en decisiones médicas.</p>
-        </div>
-        <div class="card">
-            <h3>Integración hardware</h3>
-            <p>Dispositivo ligero optimizado para uso continuo.</p>
-        </div>
-    </div>
-</section>
-
-<!-- VISIÓN -->
-<section class="section" id="vision">
-    <h2>Visión</h2>
+    <h2>Diseñado para el futuro</h2>
     <p>
-        Nuestra misión es redefinir la interacción entre humanos y tecnología en el ámbito sanitario, aumentando la precisión, seguridad y eficiencia de los procesos clínicos.
+        Biovisor AI combina inteligencia artificial, autonomía energética y capacidades avanzadas
+        para transformar la forma en que los profesionales sanitarios interactúan con la información.
     </p>
+
+    <div class="highlight">
+        Autonomía total. Sin límites de infraestructura.
+    </div>
 </section>
 
-<!-- CONTACTO -->
+<section class="section" id="tecnologia">
+    <h2>Tecnología avanzada</h2>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Autonomía total</h3>
+            <p>Batería tipo móvil con carga USB-C, diseñada para funcionar en zonas rurales sin acceso a energía.</p>
+        </div>
+
+        <div class="feature">
+            <h3>IA en tiempo real</h3>
+            <p>Reconocimiento visual, análisis clínico y reconocimiento facial integrado.</p>
+        </div>
+
+        <div class="feature">
+            <h3>Registro inteligente</h3>
+            <p>Grabación de audio, video, imágenes y almacenamiento interno para análisis posterior.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="impacto">
+    <h2>Impacto global</h2>
+    <p>
+        Biovisor AI está diseñado para mejorar la precisión médica, reducir errores clínicos
+        y llevar tecnología avanzada a entornos con recursos limitados.
+    </p>
+
+    <div class="highlight">
+        Tecnología médica accesible para todo el mundo.
+    </div>
+</section>
+
 <section class="section" id="contacto">
     <h2>Contacto</h2>
     <p>Email: contacto@biovisor-ai.com</p>
+    <p>Fundador: Carlos Alberto Duque Rivera</p>
 </section>
 
-<!-- FOOTER -->
-<footer><form action="https://formspree.io/f/tu_codigo" method="POST">
-    <input type="email" name="email" placeholder="Tu email" required>
-    <button type="submit">Solicitar demo</button>
-</form>
-    <p>© 2026 Biovisor AI · Tecnología médica impulsada por IA</p>
+<footer>
+    <p>© 2026 Biovisor AI · Innovación en salud</p>
 </footer>
-<h3>IA Médica</h3>
-            <p>Asistencia en tiempo real con inteligencia artificial</p>
-        </div>
 
-        <div class="card">
-            <h3>Autonomía</h3>
-            <p>Batería tipo móvil con carga USB-C para uso en zonas rurales</p>
-        </div>
+<script>
+function scrollToSection() {
+    document.getElementById("producto").scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
-        <div class="card">
-            <h3>Funciones</h3>
-            <p>Grabación, reconocimiento facial, análisis visual y almacenamiento</p>
-        </div>
-    </div>
-
-    <br>
-
-    <button class="btn" onclick="alert('Próximamente presentación completa')">
-        Ver presentación completa
-    </button>
-</section>
 </body>
 </html>
