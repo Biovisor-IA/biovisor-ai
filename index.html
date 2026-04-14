@@ -6,11 +6,17 @@
 <title>Biovisor AI</title>
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: Arial;
-    background: #0f172a;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #020617;
     color: white;
+    overflow-x: hidden;
 }
 
 /* NAV */
@@ -18,130 +24,157 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background: #020617;
+    position: fixed;
+    width: 100%;
+    background: rgba(2,6,23,0.8);
+    backdrop-filter: blur(10px);
 }
 
 nav h2 {
-    margin: 0;
+    color: #22c55e;
 }
 
 nav a {
     color: #94a3b8;
-    text-decoration: none;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 /* HERO */
 .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0f172a, #020617);
     text-align: center;
-    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 60px;
+    font-size: 70px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero p {
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 22px;
     color: #94a3b8;
 }
 
 .btn {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 15px 30px;
-    background: #22c55e;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
     border: none;
-    border-radius: 8px;
-    color: white;
+    border-radius: 10px;
+    color: black;
     font-size: 18px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* SECTIONS */
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTION */
 .section {
-    padding: 60px 20px;
+    padding: 100px 20px;
     text-align: center;
 }
 
 .cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
     background: #020617;
     color: #94a3b8;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <h2>Biovisor AI</h2>
     <div>
         <a href="#">Inicio</a>
-        <a href="#">Tecnología</a>
-        <a href="#">Equipo</a>
-        <a href="#">Contacto</a>
+        <a href="#tech">Tecnología</a>
+        <a href="#team">Equipo</a>
+        <a href="#contact">Contacto</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>🚀 El futuro de la visión biomédica</h1>
-    <p>Smart biomedical visor with AI integration</p>
-    <button class="btn" onclick="alert('Bienvenido a Biovisor AI')">Comenzar</button>
+    <h1>El futuro de la visión biomédica</h1>
+    <p>Inteligencia artificial aplicada a la medicina en tiempo real</p>
+    <button class="btn" onclick="scrollToSection()">Explorar</button>
 </section>
 
-<!-- TECNOLOGÍA -->
-<section class="section">
+<section class="section" id="tech">
     <h2>Tecnología</h2>
     <div class="cards">
         <div class="card">
-            <h3>IA Avanzada</h3>
-            <p>Procesamiento inteligente en tiempo real</p>
+            <h3>IA avanzada</h3>
+            <p>Análisis en tiempo real con machine learning</p>
         </div>
         <div class="card">
-            <h3>Visión Médica</h3>
-            <p>Asistencia visual para diagnósticos</p>
+            <h3>Visión médica</h3>
+            <p>Asistencia visual para profesionales sanitarios</p>
         </div>
         <div class="card">
-            <h3>Wearable</h3>
-            <p>Dispositivo cómodo y portátil</p>
+            <h3>Hardware wearable</h3>
+            <p>Ligero, potente y diseñado para uso clínico</p>
         </div>
     </div>
 </section>
 
-<!-- EQUIPO -->
-<section class="section">
+<section class="section" id="team">
     <h2>Equipo</h2>
-    <p>Un equipo multidisciplinar de expertos en IA, medicina y tecnología.</p>
+    <p>Ingenieros, médicos y expertos en inteligencia artificial trabajando juntos.</p>
 </section>
 
-<!-- CONTACTO -->
-<section class="section">
+<section class="section" id="contact">
     <h2>Contacto</h2>
-    <p>Email: contacto@biovisor-ai.com</p>
+    <p>contacto@biovisor-ai.com</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 Biovisor AI</p>
 </footer>
+
+<script>
+function scrollToSection() {
+    document.getElementById("tech").scrollIntoView({ behavior: "smooth" });
+}
+</script>
 
 </body>
 </html>
